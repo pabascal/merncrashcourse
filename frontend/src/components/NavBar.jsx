@@ -8,14 +8,15 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { PlusSquareIcon } from "@chakra-ui/icons";
-import { ArrowRightIcon } from "@chakra-ui/icons";
+import { IoMoon } from "react-icons/io5";
+import { LuSun } from "react-icons/lu";
 
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Container maxW={"1140px"} px={4}>
+    <Container maxW={"1140px"} px={4} >
       <Flex
         h={16}
         alignItems={"center"}
@@ -33,23 +34,17 @@ const Navbar = () => {
           bgGradient={"linear(to-r, cyan.400, blue.500)"}
           bgClip={"text"}
         >
-          <Link to={"/"}>Product Store </Link>
+          <Link to={"/"}>Product Store 🛒</Link>
         </Text>
 
         <HStack spacing={2} alignItems={"center"}>
-          <Link to={"/boobs"}>
-            <Button>
-              <PlusSquareIcon fontSize={20} />
-            </Button>
-          
-          </Link>
           <Link to={"/create"}>
             <Button>
               <PlusSquareIcon fontSize={20} />
             </Button>
           </Link>
           <Button onClick={toggleColorMode}>
-            {colorMode === "light" ? "🌙" : "☀️"}
+            {colorMode === "light" ? <IoMoon />  : <LuSun size="20" />}
           </Button>
         </HStack>
       </Flex>
